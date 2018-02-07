@@ -1,0 +1,21 @@
+public class RandomCheck {
+    
+  list<Contact> rancon = new list<contact>();
+    
+    public list<contact> randomdisplay(integer datacount){
+        integer total = [select count() from contact];
+        rancon = [select name, email, phone from contact];
+     
+        list<integer> rannum = new list<integer>();
+        for(integer i=0; i<datacount; i++){
+            integer j= math.round(math.random()*total);
+            rannum.add(j);
+        }
+        
+        list<contact> showcon = new list<contact>();
+        for(integer a=0; a<rannum.size(); a++){
+           showcon.add(rancon.get(a));
+        }     
+        return showcon;
+    }
+}
